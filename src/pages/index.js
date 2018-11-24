@@ -32,7 +32,14 @@ class BlogIndex extends React.Component {
           title={siteTitle + ' - Web Designer Freelancer em São Paulo / SP'}
         />
         <Bio />
-        <h2>Últimos Posts</h2>
+        <h2
+          style={{
+            borderTop: '1px solid #eee',
+            paddingTop: '15px'
+          }}
+        >
+          Últimos Posts
+        </h2>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
