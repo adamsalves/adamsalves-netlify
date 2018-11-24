@@ -19,9 +19,17 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={siteTitle}
+          htmlAttributes={{ lang: 'pt-br' }}
+          meta={[
+            { name: 'author', content: 'Adams Alves' },
+            { name: 'description', content: siteDescription },
+            { name: 'keywords', content: 'Web Designer Freelancer, Design, Desenvolvimento Web, Front End, Wordpress, Sites Responsivos, Web Designer Freelancer em São Paulo' },
+            { property: 'og:type', content: 'website' },
+            { property: 'og:title', content: 'Adams Alves - Web Designer Freelancer em São Paulo / SP' },
+            { property: 'og:description', content: 'Adams Alves - Web Designer Freelancer com foco em Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.' },
+            { property: 'og:url', content: 'https://adamsalves.com.br' },
+          ]}
+          title={siteTitle + ' - Web Designer Freelancer em São Paulo / SP'}
         />
         <Bio />
         <h2>Últimos Posts</h2>

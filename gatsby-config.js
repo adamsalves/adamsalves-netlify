@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Adams Alves',
     author: 'Adams O. S. Alves',
-    description: 'Site pessoal de Adams Alves, desenvolvedor Front-end em São Paulo',
+    description: 'Adams Alves - Web Designer Freelancer com foco em Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.',
     siteUrl: 'https://adamsalves.com.br/',
   },
   pathPrefix: '/',
@@ -42,7 +42,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-88293764-1`,
+        head: false,
       },
     },
     `gatsby-plugin-feed`,
