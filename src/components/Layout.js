@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
+import Footer from './Footer'
 
 class Layout extends React.Component {
   render() {
@@ -11,18 +12,12 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <header
-          style={{
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            maxWidth: rhythm(34),
-            padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
-          }}
-        >
+        <header>
           <h1
             style={{
-              ...scale(.49),
+              ...scale(.6),
               marginTop: 0,
+              marginBottom: rhythm(1)
             }}
           >
             <Link
@@ -46,19 +41,13 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <header
-          style={{
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            maxWidth: rhythm(34),
-            padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
-          }}
-        >
+        <header>
           <h3
             style={{
-              ...scale(.49),
+              ...scale(.6),
               fontFamily: 'Libre Franklin, sans-serif',
               marginTop: 0,
+              marginBottom: rhythm(1)
             }}
           >
             <Link
@@ -76,18 +65,17 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div>
-        {header}
-        <div
-          style={{
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            maxWidth: rhythm(28),
-            padding: `${rhythm(0)} ${rhythm(3 / 4)}`,
-          }}
+      <div
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: rhythm(24),
+          padding: `${rhythm(.8)} ${rhythm(1)}`,
+        }}
         >
-          {children}
-        </div>
+        {header}
+        {children}
+        <Footer></Footer>
       </div>
     )
   }
