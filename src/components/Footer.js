@@ -9,7 +9,6 @@ class Footer extends Component {
         style={{
           display: 'flex',
           marginTop: rhythm(1.5),
-          marginBottom: rhythm(1),
           justifyContent: 'space-between',
           alignItems: 'center'
         }}
