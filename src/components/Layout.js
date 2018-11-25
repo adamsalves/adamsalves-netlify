@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
+import Footer from './Footer'
 
 class Layout extends React.Component {
   render() {
@@ -76,18 +77,17 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div>
-        {header}
-        <div
-          style={{
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            maxWidth: rhythm(28),
-            padding: `${rhythm(0)} ${rhythm(3 / 4)}`,
-          }}
+      <div
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: rhythm(28),
+          padding: `${rhythm(0)} ${rhythm(3 / 4)}`,
+        }}
         >
-          {children}
-        </div>
+        {header}
+        {children}
+        <Footer></Footer>
       </div>
     )
   }
