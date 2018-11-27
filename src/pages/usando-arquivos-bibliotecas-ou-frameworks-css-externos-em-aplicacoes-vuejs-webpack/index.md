@@ -18,7 +18,7 @@ No _post_ anterior, mostrei [como extrair o css de compoentes VueJS para um arqu
 Você com certeza, além de escrever boa parte do _CSS_ do seu site/aplicação, usa algo externo, seja uma biblioteca ou um framework. <!-- more --> Vamos ver então, como incluí-los nos nossos projetos.  
 
 ## Extract Text Plugin
-Com um projeto `VueJS` rodando, ({% post_link Extraindo-o-CSS-de-componentes-VueJS-para-um-arquivo-separado se você não sabe como, dá uma olhada aqui! %}), teremos também que usar o [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin), que igualmente vai extrair o conteúdo do nosso arquivo externo.
+Com um projeto `VueJS` rodando, [se você não sabe como, dá uma olhada aqui!](/extraindo-o-css-de-componentes-vuejs-para-um-arquivo-separado), teremos também que usar o [Extract Text Plugin](https://github.com/webpack/extract-text-webpack-plugin), que igualmente vai extrair o conteúdo do nosso arquivo externo.
 Vamos instalá-lo pelo `npm`:
 ``` bash
 $ npm install extract-text-webpack-plugin --save-dev
