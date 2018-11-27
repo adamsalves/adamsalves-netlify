@@ -28,7 +28,7 @@ class Bio extends React.Component {
             src={profilePic}
             alt={`Adams Alves - Front-End em São Paulo`}
             style={{
-              marginRight: rhythm(1.5),
+              marginRight: rhythm(1 / 2),
               marginBottom: 0,
               width: rhythm(3),
               height: rhythm(3),
