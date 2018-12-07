@@ -2,11 +2,7 @@
 title: Como habilitar o "tab autocomplete" para JSX com Emmet no Atom
 subtitle: Codificando arquivos JSX com mais agilidade
 date: 2016-05-10 16:00:07
-tags:
-- Atom
-- Emmet
-- JSX
-- React
+tags: ["Atom", "Emmet", "JSX", "React"]
 ---
 ![atom_emmet](./atomemmet.jpg)
 

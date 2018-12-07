@@ -42,6 +42,7 @@ class BlogIndex extends React.Component {
         </h2>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
+          const tags = get(node, 'frontmatter.tags')
           return (
             <div key={node.fields.slug}>
               <h3
@@ -53,7 +54,22 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>{node.frontmatter.date}</small>{' '}
+              {tags.map((tag, index) => {
+                return (
+                  <code 
+                    className='language-text' 
+                    key={index}
+                    style={{
+                        marginRight: '5px',
+                        padding: '2px',
+                        fontSize: '12px'  
+                      }}  
+                  >
+                    {tag}
+                  </code>
+                )
+              })}
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -83,6 +99,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
           }
         }
       }

@@ -1,14 +1,6 @@
 ---
 title: Usando arquivos CSS externos em aplicações VueJS + Webpack
-tags:
-  - VueJS
-  - Webpack
-  - CSS
-  - Pre-Processors
-  - Stylus
-  - SASS
-  - LESS
-  - Hot Reload
+tags: ["VueJS", "Webpack", "CSS", "Pre-Processors", "Stylus", "SASS", "LESS", "Hot Reload"]
 subtitle: 'Como incluir arquivos, bibliotecas ou frameworks nos nossos Vue Components'
 date: 2016-07-21 15:41:50
 ---
