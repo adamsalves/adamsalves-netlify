@@ -15,9 +15,9 @@ const TagsPage = ({
     site: {
       siteMetadata: { title },
     },
-  },
+  }, location
 }) => (
-  <Layout location={location.pathname} title={title}>
+  <Layout location={location} title={title}>
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
