@@ -1,12 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 // Components
-import Helmet from "react-helmet"
-import { Link, graphql } from "gatsby"
+import Helmet from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
 const TagsPage = ({
   data: {
@@ -16,7 +17,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
+  <Layout location={location.pathname} title={title}>
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
@@ -30,7 +31,7 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-  </div>
+  </Layout>
 )
 
 TagsPage.propTypes = {
