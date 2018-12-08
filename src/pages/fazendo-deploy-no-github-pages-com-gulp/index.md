@@ -1,11 +1,7 @@
 ---
 title: Fazendo deploy no Github Pages com Gulp
 date: 2016-03-29 19:53:45
-tags:
-- deploy
-- gulp
-- blog
-- tools
+tags: ["deploy", "gulp", "blog", "tools"]
 ---
 ![gulp](./gulp.jpg)
 

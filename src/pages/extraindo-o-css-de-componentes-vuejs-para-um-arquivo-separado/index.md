@@ -2,14 +2,7 @@
 title: Extraindo o CSS de componentes VueJS para um arquivo separado
 subtitle: Gerando um arquivo minificado com todos os estilos dos Vue Components(css, stylus, sass ou less)
 date: 2016-07-09 12:04:10
-tags:
-- VueJS
-- Webpack
-- CSS
-- Pre-Processors
-- Stylus
-- SASS
-- LESS
+tags: ["VueJS", "Webpack", "CSS", "Pre-Processors", "Stylus", "SASS", "LESS"]
 ---
 ![components](./components.jpg)
 
