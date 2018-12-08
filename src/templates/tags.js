@@ -5,14 +5,15 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
   } tagged with '${tag}'`
+
   return (
-    <Layout location={location.pathname} title={data.site.siteMetadata.title} >
+    <Layout location={location} title={data.site.siteMetadata.title} >
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
