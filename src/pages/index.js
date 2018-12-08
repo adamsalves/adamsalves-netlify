@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
+import kebabCase from 'lodash/kebabCase'
 
 class BlogIndex extends React.Component {
   render() {
@@ -66,7 +67,14 @@ class BlogIndex extends React.Component {
                         fontSize: '12px'  
                       }}  
                   >
+                   <Link 
+                      to={`/tags/${kebabCase(tag)}/`}
+                      style={{
+                        fontWeight: 'normal'
+                      }}
+                    >
                     {tag}
+                   </Link>
                   </code>
                 )
               })}
