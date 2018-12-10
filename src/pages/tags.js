@@ -13,12 +13,24 @@ const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title },
+      siteMetadata: { title, description },
     },
   }, location
 }) => (
   <Layout location={location} title={title}>
-    <Helmet title={title} />
+    <Helmet 
+      htmlAttributes={{ lang: 'pt-br' }}
+      meta={[
+        { name: 'author', content: 'Adams Alves' },
+        { name: 'description', content: description },
+        { name: 'keywords', content: 'Web Designer Freelancer, Design, Desenvolvimento Web, Front End, Wordpress, Sites Responsivos, Web Designer Freelancer em São Paulo' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Adams Alves - Web Designer Freelancer em São Paulo / SP' },
+        { property: 'og:description', content: 'Adams Alves - Web Designer Freelancer com foco em Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.' },
+        { property: 'og:url', content: 'https://adamsalves.com.br' },
+      ]}
+      title={`Tags | ${title} - Web Designer Freelancer em São Paulo / SP`} 
+    />
     <div>
       <h1>Tags</h1>
       <ul>
@@ -59,6 +71,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(

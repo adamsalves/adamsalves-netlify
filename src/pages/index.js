@@ -30,7 +30,7 @@ class BlogIndex extends React.Component {
             { property: 'og:description', content: 'Adams Alves - Web Designer Freelancer com foco em Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.' },
             { property: 'og:url', content: 'https://adamsalves.com.br' },
           ]}
-          title={siteTitle + ' - Web Designer Freelancer em São Paulo / SP'}
+          title={`${siteTitle} - Web Designer Freelancer em São Paulo / SP`}
         />
         <Bio />
         <h2
