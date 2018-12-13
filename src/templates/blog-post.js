@@ -6,6 +6,7 @@ import get from 'lodash/get'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm, scale } from '../utils/typography'
+import kebabCase from 'lodash/kebabCase'
 
 
 class BlogPostTemplate extends React.Component {
@@ -31,6 +32,14 @@ class BlogPostTemplate extends React.Component {
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
         <h1>{post.frontmatter.title}</h1>
+        <h3 
+          style={{
+            fontWeight: 'normal',
+            fontSize: '18px'
+          }}
+        >
+          {post.frontmatter.subtitle}
+        </h3>
         <p
           style={{
             ...scale(-1 / 5),
@@ -42,6 +51,35 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          style={{
+            marginBottom: '15px'
+          }}
+        >
+          <span>Tags: </span>
+          {post.frontmatter.tags.map((tag, index) => {
+            return (
+              <code 
+                className='language-text' 
+                key={index}
+                style={{
+                    marginRight: '5px',
+                    padding: '2px',
+                    fontSize: '12px'  
+                  }}  
+              >
+                <Link 
+                  to={`/tags/${kebabCase(tag)}/`}
+                  style={{
+                    fontWeight: 'normal'
+                  }}
+                >
+                {tag}
+                </Link>
+              </code>
+            )
+          })}
+        </div>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -96,6 +134,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        subtitle
+        tags
         date(formatString: "MMMM DD, YYYY")
       }
     }

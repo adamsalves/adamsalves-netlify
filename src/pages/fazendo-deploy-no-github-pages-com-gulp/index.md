@@ -1,5 +1,6 @@
 ---
 title: Fazendo deploy no Github Pages com Gulp
+subtitle: Publicando seus estáticos com apenas uma task
 date: 2016-03-29 19:53:45
 tags: ["deploy", "gulp", "blog", "tools"]
 ---
