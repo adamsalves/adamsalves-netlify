@@ -1,13 +1,70 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link,graphql } from 'gatsby'
-import get from 'lodash/get'
+import { Link, graphql } from 'gatsby'
 
+// components
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
+
+// utils
+import get from 'lodash/get'
 import { rhythm, scale } from '../utils/typography'
 import kebabCase from 'lodash/kebabCase'
+import styled from 'styled-components'
 
+// css
+const WrapPostTitle = styled.section`
+  text-align: center;
+  background: #FCFCFC;
+  z-index: -1;
+`
+const PostTitle = styled.h1`
+  padding: 60px;
+  font-size: 2.5rem;
+`
+const WrapPostSubtitle = styled.section`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(40)};
+  text-align: center;
+  padding: ${rhythm(.8)} ${rhythm(1)};
+`
+const PostSubtitle = styled.h3`
+  font-weight: normal;
+  font-size: 18px;
+  text-decoration: underline;
+  text-underline-position: under;
+  line-height: 1.4em;
+`
+const PostMeta = styled.p`
+  ${scale(-1 / 5)};
+  display: block;
+  margin-bottom: ${rhythm(.5)};
+  margin-top: ${rhythm(.5)};
+`
+const PostMetaTag = styled.code`
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 2px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+`
+const PostMetaTagLink = styled(Link)`
+  font-weight: normal;
+`
+const MainPost = styled.main`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(33)};
+  padding: ${rhythm(.8)} ${rhythm(1)};
+`
+const PostNextPrev = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -31,88 +88,64 @@ class BlogPostTemplate extends React.Component {
           ]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <h3 
-          style={{
-            fontWeight: 'normal',
-            fontSize: '18px'
-          }}
-        >
-          {post.frontmatter.subtitle}
-        </h3>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-.5),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div
-          style={{
-            marginBottom: '15px'
-          }}
-        >
-          <span>Tags: </span>
-          {post.frontmatter.tags.map((tag, index) => {
-            return (
-              <code 
-                className='language-text' 
-                key={index}
+        <article className="post">
+          <WrapPostTitle>
+            <PostTitle>
+              {post.frontmatter.title}
+            </PostTitle>
+          </WrapPostTitle>
+          <WrapPostSubtitle>
+            <PostSubtitle>
+              {post.frontmatter.subtitle}
+            </PostSubtitle>
+            <PostMeta>
+              {post.frontmatter.date}
+              {post.frontmatter.tags.map((tag, index) => {
+                return (
+                  <PostMetaTag 
+                    className='language-text' 
+                    key={index}
+                  >
+                    <PostMetaTagLink 
+                      to={`/tags/${kebabCase(tag)}/`}
+                    >
+                      {tag}
+                    </PostMetaTagLink>
+                  </PostMetaTag>
+                )
+              })}
+            </PostMeta>
+          </WrapPostSubtitle>
+          <section>
+            <MainPost>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              <hr
                 style={{
-                    marginRight: '5px',
-                    padding: '2px',
-                    fontSize: '12px'  
-                  }}  
-              >
-                <Link 
-                  to={`/tags/${kebabCase(tag)}/`}
-                  style={{
-                    fontWeight: 'normal'
-                  }}
-                >
-                {tag}
-                </Link>
-              </code>
-            )
-          })}
-        </div>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
-
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <li>
-            {
-              previous &&
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            }
-          </li>
-          <li>
-            {
-              next &&
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            }
-          </li>
-        </ul>
+                  marginBottom: rhythm(1),
+                }}
+              />
+              <Bio />
+              <PostNextPrev>
+                <li>
+                  {
+                    previous &&
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  }
+                </li>
+                <li>
+                  {
+                    next &&
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  }
+                </li>
+              </PostNextPrev>
+            </MainPost>
+          </section> 
+        </article>
       </Layout>
     )
   }

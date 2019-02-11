@@ -3,11 +3,21 @@ import PropTypes from 'prop-types'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
+import styled from 'styled-components'
 
 // Components
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import { rhythm } from '../utils/typography'
+
+// css
+const MainTags = styled.main`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(33)};
+  padding: ${rhythm(.8)} ${rhythm(1)};
+`
 
 const TagsPage = ({
   data: {
@@ -31,18 +41,20 @@ const TagsPage = ({
       ]}
       title={`Tags | ${title} - Web Designer Freelancer em São Paulo / SP`} 
     />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <section>
+      <MainTags>
+        <h1>Tags</h1>
+        <ul>
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </MainTags>
+    </section>
   </Layout>
 )
 

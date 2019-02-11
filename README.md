@@ -9,3 +9,6 @@ Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
 
 ## Running in development
 `gatsby develop`
+
+## Site Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/05b2f56a-8773-40ee-b2dc-f8019ed1efe5/deploy-status)](https://app.netlify.com/sites/adamsalves/deploys)
