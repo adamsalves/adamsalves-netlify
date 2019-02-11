@@ -6,6 +6,19 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Helmet from 'react-helmet'
 
+// utils
+import { rhythm } from '../utils/typography'
+import styled from 'styled-components'
+
+// css
+
+const MainTags = styled.main`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(33)};
+  padding: ${rhythm(.8)} ${rhythm(1)};
+`
+
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
@@ -30,22 +43,26 @@ const Tags = ({ pageContext, data, location }) => {
         ]}
         title={`Tag: ${tag} | ${siteTitle} - Web Designer Freelancer em São Paulo / SP`} 
       />
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { title } = node.frontmatter
-          return (
-            <li key={node.fields.slug}>
-              <Link to={node.fields.slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
-        This links to a page that does not yet exist.
-        We'll come back to it!
-      */}
-      <Link to='/tags'>Todas as Tags</Link>
+      <section>
+        <MainTags>
+          <h1>{tagHeader}</h1>
+          <ul>
+            {edges.map(({ node }) => {
+              const { title } = node.frontmatter
+              return (
+                <li key={node.fields.slug}>
+                  <Link to={node.fields.slug}>{title}</Link>
+                </li>
+              )
+            })}
+          </ul>
+          {/*
+            This links to a page that does not yet exist.
+            We'll come back to it!
+          */}
+          <Link to='/tags'>Todas as Tags</Link>
+        </MainTags>
+      </section>
     </Layout>
   )
 }

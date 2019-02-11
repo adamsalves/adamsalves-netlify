@@ -3,10 +3,52 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Bio from '../components/Bio'
+// component
 import Layout from '../components/Layout'
+
+// utils
 import { rhythm } from '../utils/typography'
 import kebabCase from 'lodash/kebabCase'
+import styled from 'styled-components'
+
+// css 
+const SectionBlogDescription = styled.section`
+  text-align: center;
+  background: #FCFCFC;
+  z-index: -1;
+`
+const HeaderBlogDescription = styled.h2`
+  padding: 60px;
+  font-size: 2.5rem;
+  font-family: Libre Franklin; sans-serif;
+  font-weight: normal;
+`
+const MainBlogPost = styled.main`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(33)};
+  padding: ${rhythm(.8)} ${rhythm(1)};
+`
+const MainBlogPostHead = styled.h2`
+  padding-top: 15px;
+  margin-bottom: ${rhythm(1.2)};
+  border-bottom: 1px solid #eee;
+`
+const MainBlogPostTitle = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`
+const MainBlogPostTitleLink = styled(Link)`
+  box-shadow: none;
+`
+const MainBlogPostTag = styled.code`
+  margin-right: 5px;
+  padding: 2px;
+  font-size: 12px;  
+  font-family: Open Sans, sans-serif;
+`
+const MainBlogPostTagLink = styled(Link)`
+  font-weight: normal;
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -32,56 +74,47 @@ class BlogIndex extends React.Component {
           ]}
           title={`${siteTitle} - Web Designer Freelancer em São Paulo / SP`}
         />
-        <Bio />
-        <h2
-          style={{
-            borderTop: '1px solid #eee',
-            paddingTop: '15px'
-          }}
-        >
-          Últimos Posts
-        </h2>
-        {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          const tags = get(node, 'frontmatter.tags')
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>{' '}
-              {tags.map((tag, index) => {
-                return (
-                  <code 
-                    className='language-text' 
-                    key={index}
-                    style={{
-                        marginRight: '5px',
-                        padding: '2px',
-                        fontSize: '12px'  
-                      }}  
-                  >
-                   <Link 
-                      to={`/tags/${kebabCase(tag)}/`}
-                      style={{
-                        fontWeight: 'normal'
-                      }}
-                    >
-                    {tag}
-                   </Link>
-                  </code>
-                )
-              })}
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        <SectionBlogDescription>
+          <HeaderBlogDescription>
+            <strong>Web Design</strong> e desenvolvimento <strong>Front-End</strong>
+          </HeaderBlogDescription>
+        </SectionBlogDescription>
+        <section>
+          <MainBlogPost>
+            <MainBlogPostHead>
+              Últimos Posts
+            </MainBlogPostHead>
+            {posts.map(({ node }) => {
+              const title = get(node, 'frontmatter.title') || node.fields.slug
+              const tags = get(node, 'frontmatter.tags')
+              return (
+                <article key={node.fields.slug}>
+                  <MainBlogPostTitle                  >
+                    <MainBlogPostTitleLink to={node.fields.slug}>
+                      {title}
+                    </MainBlogPostTitleLink>
+                  </MainBlogPostTitle>
+                  <small>{node.frontmatter.date}</small>{' '}
+                  {tags.map((tag, index) => {
+                    return (
+                      <MainBlogPostTag 
+                        className='language-text' 
+                        key={index} 
+                      >
+                        <MainBlogPostTagLink 
+                          to={`/tags/${kebabCase(tag)}/`}
+                        >
+                          {tag}
+                        </MainBlogPostTagLink>
+                      </MainBlogPostTag>
+                    )
+                  })}
+                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                </article>
+              )
+            })}
+          </MainBlogPost>
+        </section>
       </Layout>
     )
   }
