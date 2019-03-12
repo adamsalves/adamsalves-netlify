@@ -24,6 +24,14 @@ const BioImage = styled.img`
   border-radius: ${rhythm(50)};
 `
 
+const BioLegend = styled.div`
+  margin-bottom: ${rhythm(.5)};
+`
+
+const BioParagraph = styled.p`
+  margin-bottom: 0;
+`
+
 class Bio extends React.Component {
   render() {
     return (
@@ -32,15 +40,15 @@ class Bio extends React.Component {
           src={profilePic}
           alt={this.props.site.siteMetadata.description}
         />
-        <div>
-          <p dangerouslySetInnerHTML={{ __html: this.props.site.siteMetadata.bio }} />
-          <p>
+        <BioLegend>
+          <BioParagraph dangerouslySetInnerHTML={{ __html: this.props.site.siteMetadata.bio }} />
+          <BioParagraph>
             Entre em contato comigo pelo e-mail:{' '} 
             <a href="mailto:contato@adamsalves.com.br">
               contato@adamsalves.com.br
             </a>
-          </p>
-        </div> 
+          </BioParagraph>
+        </BioLegend> 
       </BioWrapper>
     )
   }
