@@ -1,4 +1,6 @@
 import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
@@ -28,21 +30,37 @@ class Bio extends React.Component {
       <BioWrapper>
         <BioImage
           src={profilePic}
-          alt={`Adams Alves - Front-End em São Paulo`}
+          alt={this.props.site.siteMetadata.description}
         />
-        <p>
-        Trabalho com <strong>Desenvolvimento Web</strong> com foco em <strong>Front-End</strong>.
-        Já atuei como freelancer na criação de sites institucionais e projetos que usavam <strong>Wordpress</strong>. 
-        Atualmente quero trabalhar com Front-end, <strong>React</strong> ou frameworks semelhantes e <strong>UI Design</strong>.{' '}
-          <br></br>
-          Entre em contato comigo pelo e-mail:{' '} 
-          <a href="mailto:contato@adamsalves.com.br">
-            contato@adamsalves.com.br
-          </a>
-        </p>
+        <div>
+          <p dangerouslySetInnerHTML={{ __html: this.props.site.siteMetadata.bio }} />
+          <p>
+            Entre em contato comigo pelo e-mail:{' '} 
+            <a href="mailto:contato@adamsalves.com.br">
+              contato@adamsalves.com.br
+            </a>
+          </p>
+        </div> 
       </BioWrapper>
     )
   }
 }
 
-export default Bio
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            bio
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <Bio site={data.site} />
+    )}
+  />
+)

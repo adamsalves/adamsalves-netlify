@@ -64,7 +64,7 @@ class Footer extends Component {
               src={github}
             />
           </a>
-          <a href="https://instagram.com/adamsalves.wd/">
+          <a href="https://instagram.com/adamsalves.dev/">
             <FooterImage
               src={instagram}
             />
