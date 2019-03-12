@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 
 // utils
 import { rhythm } from '../utils/typography'
@@ -50,7 +51,7 @@ class Footer extends Component {
     return (
       <FooterWrapper>
         <FooterLink to={'/'}>
-          Adams Alves - {new Date().getFullYear()}
+          {this.props.site.siteMetadata.title} - {new Date().getFullYear()}
         </FooterLink>
         <FooterNav>
           <a href="https://twitter.com/adams_alves/">
@@ -97,4 +98,19 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <Footer site={data.site} />
+    )}
+  />
+)
