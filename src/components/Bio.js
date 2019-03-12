@@ -31,7 +31,7 @@ class Bio extends React.Component {
           alt={`Adams Alves - Front-End em São Paulo`}
         />
         <p>
-        Sou um <strong>Web Designer</strong> e desenvolvedor <strong>Front-End</strong>.
+        Trabalho com <strong>Desenvolvimento Web</strong> com foco em <strong>Front-End</strong>.
         Já atuei como freelancer na criação de sites institucionais e projetos que usavam <strong>Wordpress</strong>. 
         Atualmente quero trabalhar com Front-end, <strong>React</strong> ou frameworks semelhantes e <strong>UI Design</strong>.{' '}
           <br></br>

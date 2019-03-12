@@ -69,8 +69,8 @@ class Layout extends React.Component {
           <nav>
             <NavImage
               src={profilePic}
-              alt={`Adams Alves - Front-End em São Paulo`}
-              title={`Sou um Web Designer e desenvolvedor Front-End. Já atuei como freelancer na criação de sites institucionais e projetos que usavam Wordpress. Atualmente quero trabalhar com Front-end, React ou frameworks semelhantes e UI Design`}
+              alt={`Adams Alves - Desenvolvimento Web e Front-End em São Paulo`}
+              title={`Trabalho com Desenvolvimento Web com foco em Front-End. Já atuei como freelancer na criação de sites institucionais e projetos que usavam Wordpress. Atualmente quero trabalhar com Front-end, React ou frameworks semelhantes e UI Design`}
             />
           </nav>
         </Header>
@@ -88,8 +88,8 @@ class Layout extends React.Component {
           <nav>
             <NavImage
               src={profilePic}
-              alt={`Adams Alves - Front-End em São Paulo`}
-              title={`Sou um Web Designer e desenvolvedor Front-End. Já atuei como freelancer na criação de sites institucionais e projetos que usavam Wordpress. Atualmente quero trabalhar com Front-end, React ou frameworks semelhantes e UI Design`}
+              alt={`Adams Alves - Desenvolvimento Web e Front-End em São Paulo`}
+              title={`Trabalho com Desenvolvimento Web com foco em Front-End. Já atuei como freelancer na criação de sites institucionais e projetos que usavam Wordpress. Atualmente quero trabalhar com Front-end, React ou frameworks semelhantes e UI Design`}
             />
           </nav>
         </Header>

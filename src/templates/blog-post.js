@@ -80,13 +80,13 @@ class BlogPostTemplate extends React.Component {
           meta={[
             { name: 'author', content: 'Adams Alves' },
             { name: 'description', content: siteDescription },
-            { name: 'keywords', content: 'Web Designer Freelancer, Design, Desenvolvimento Web, Front End, Wordpress, Sites Responsivos, Web Designer Freelancer em São Paulo' },
+            { name: 'keywords', content: 'Desenvolvimento Web, Front End, Wordpress, Sites Responsivos em São Paulo' },
             { property: 'og:type', content: 'website' },
-            { property: 'og:title', content: 'Adams Alves - Web Designer Freelancer em São Paulo / SP' },
-            { property: 'og:description', content: 'Adams Alves - Web Designer Freelancer com foco em Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.' },
+            { property: 'og:title', content: 'Adams Alves - Desenvolvimento Web e Front-End em São Paulo / SP' },
+            { property: 'og:description', content: 'Adams Alves - Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.' },
             { property: 'og:url', content: 'https://adamsalves.com.br' },
           ]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
+          title={`${post.frontmatter.title} | ${siteTitle} - Desenvolvimento Web e Front-End em São Paulo / SP`}
         />
         <article className="post">
           <WrapPostTitle>

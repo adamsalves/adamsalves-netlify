@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Adams Alves',
     author: 'Adams O. S. Alves',
-    description: 'Adams Alves - Web Designer Freelancer com foco em Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.',
+    description: 'Adams Alves - Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.',
     siteUrl: 'https://adamsalves.com.br/',
   },
   pathPrefix: '/',
