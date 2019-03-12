@@ -79,42 +79,40 @@ class BlogIndex extends React.Component {
             <strong>Desenvolvimento Web</strong> e <strong>Front-End</strong>
           </HeaderBlogDescription>
         </SectionBlogDescription>
-        <section>
-          <MainBlogPost>
-            <MainBlogPostHead>
-              Últimos Posts
-            </MainBlogPostHead>
-            {posts.map(({ node }) => {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              const tags = get(node, 'frontmatter.tags')
-              return (
-                <article key={node.fields.slug}>
-                  <MainBlogPostTitle                  >
-                    <MainBlogPostTitleLink to={node.fields.slug}>
-                      {title}
-                    </MainBlogPostTitleLink>
-                  </MainBlogPostTitle>
-                  <small>{node.frontmatter.date}</small>{' '}
-                  {tags.map((tag, index) => {
-                    return (
-                      <MainBlogPostTag 
-                        className='language-text' 
-                        key={index} 
+        <MainBlogPost>
+          <MainBlogPostHead>
+            Últimos Posts
+          </MainBlogPostHead>
+          {posts.map(({ node }) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            const tags = get(node, 'frontmatter.tags')
+            return (
+              <article key={node.fields.slug}>
+                <MainBlogPostTitle                  >
+                  <MainBlogPostTitleLink to={node.fields.slug}>
+                    {title}
+                  </MainBlogPostTitleLink>
+                </MainBlogPostTitle>
+                <small>{node.frontmatter.date}</small>{' '}
+                {tags.map((tag, index) => {
+                  return (
+                    <MainBlogPostTag 
+                      className='language-text' 
+                      key={index} 
+                    >
+                      <MainBlogPostTagLink 
+                        to={`/tags/${kebabCase(tag)}/`}
                       >
-                        <MainBlogPostTagLink 
-                          to={`/tags/${kebabCase(tag)}/`}
-                        >
-                          {tag}
-                        </MainBlogPostTagLink>
-                      </MainBlogPostTag>
-                    )
-                  })}
-                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                </article>
-              )
-            })}
-          </MainBlogPost>
-        </section>
+                        {tag}
+                      </MainBlogPostTagLink>
+                    </MainBlogPostTag>
+                  )
+                })}
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </article>
+            )
+          })}
+        </MainBlogPost>
       </Layout>
     )
   }

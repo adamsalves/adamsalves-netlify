@@ -53,11 +53,16 @@ const PostMetaTagLink = styled(Link)`
   font-weight: normal;
 `
 const MainPost = styled.main`
+  padding: ${rhythm(.8)} ${rhythm(1)};
+`
+
+const MainContentPost = styled.section`
   margin-left: auto;
   margin-right: auto;
   max-width: ${rhythm(33)};
   padding: ${rhythm(.8)} ${rhythm(1)};
 `
+
 const PostNextPrev = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -88,36 +93,36 @@ class BlogPostTemplate extends React.Component {
           ]}
           title={`${post.frontmatter.title} | ${siteTitle} - Desenvolvimento Web e Front-End em São Paulo / SP`}
         />
-        <article className="post">
-          <WrapPostTitle>
-            <PostTitle>
-              {post.frontmatter.title}
-            </PostTitle>
-          </WrapPostTitle>
-          <WrapPostSubtitle>
-            <PostSubtitle>
-              {post.frontmatter.subtitle}
-            </PostSubtitle>
-            <PostMeta>
-              {post.frontmatter.date}
-              {post.frontmatter.tags.map((tag, index) => {
-                return (
-                  <PostMetaTag 
-                    className='language-text' 
-                    key={index}
-                  >
-                    <PostMetaTagLink 
-                      to={`/tags/${kebabCase(tag)}/`}
+        <MainPost>
+          <article className="post">
+            <WrapPostTitle>
+              <PostTitle>
+                {post.frontmatter.title}
+              </PostTitle>
+            </WrapPostTitle>
+            <WrapPostSubtitle>
+              <PostSubtitle>
+                {post.frontmatter.subtitle}
+              </PostSubtitle>
+              <PostMeta>
+                {post.frontmatter.date}
+                {post.frontmatter.tags.map((tag, index) => {
+                  return (
+                    <PostMetaTag 
+                      className='language-text' 
+                      key={index}
                     >
-                      {tag}
-                    </PostMetaTagLink>
-                  </PostMetaTag>
-                )
-              })}
-            </PostMeta>
-          </WrapPostSubtitle>
-          <section>
-            <MainPost>
+                      <PostMetaTagLink 
+                        to={`/tags/${kebabCase(tag)}/`}
+                      >
+                        {tag}
+                      </PostMetaTagLink>
+                    </PostMetaTag>
+                  )
+                })}
+              </PostMeta>
+            </WrapPostSubtitle>           
+            <MainContentPost>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
               <hr
                 style={{
@@ -143,9 +148,9 @@ class BlogPostTemplate extends React.Component {
                   }
                 </li>
               </PostNextPrev>
-            </MainPost>
-          </section> 
-        </article>
+            </MainContentPost>
+          </article>
+        </MainPost>
       </Layout>
     )
   }
