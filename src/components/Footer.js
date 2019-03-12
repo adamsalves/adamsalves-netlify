@@ -50,7 +50,7 @@ class Footer extends Component {
     return (
       <FooterWrapper>
         <FooterLink to={'/'}>
-          Adams Alves - 2018
+          Adams Alves - {new Date().getFullYear()}
         </FooterLink>
         <FooterNav>
           <a href="https://twitter.com/adams_alves/">
