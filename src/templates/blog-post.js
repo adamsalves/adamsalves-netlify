@@ -53,7 +53,7 @@ const PostMetaTagLink = styled(Link)`
   font-weight: normal;
 `
 const MainPost = styled.main`
-  padding: ${rhythm(.8)} ${rhythm(1)};
+  padding: 0;
 `
 
 const MainContentPost = styled.section`
