@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Adams Alves',
     author: 'Adams O. S. Alves',
-    description: 'Adams Alves - Desenvolvimento Web, Sites Responsivos, Front End e Wordpress em São Paulo/SP.',
-    bio: 'Trabalho com <strong>Desenvolvimento Web</strong> com foco em <strong>Front-End</strong>. Já atuei como freelancer na criação de sites institucionais e projetos que usavam <strong>Wordpress</strong>. Atualmente quero trabalhar com Front-end, <strong>React</strong> ou frameworks semelhantes e <strong>UI Design</strong>.',
+    description: 'Adams Alves - Desenvolvimento Web e Front End em São Paulo/SP.',
+    bio: 'Trabalho com <strong>Desenvolvimento Web</strong> com foco em <strong>Front-End</strong>. Já atuei como freelancer na criação de sites institucionais e projetos que usavam <strong>Wordpress</strong>. Atualmente quero trabalhar com Front-end, <strong>Vue e React</strong> ou frameworks semelhantes e <strong>UI Design</strong>.',
     siteUrl: 'https://adamsalves.com.br/',
   },
   pathPrefix: '/',
