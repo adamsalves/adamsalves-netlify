@@ -30,7 +30,7 @@ const WrapPostSubtitle = styled.section`
   padding: ${rhythm(.8)} ${rhythm(1)};
 `
 const PostBlogSupport = styled.p`
-  padding: 10px;
+  padding: 10px 10px 60px 10px;
   font-size: 1.2rem;
   font-family: Libre Franklin; sans-serif;
   font-weight: normal;
