@@ -29,6 +29,12 @@ const WrapPostSubtitle = styled.section`
   text-align: center;
   padding: ${rhythm(.8)} ${rhythm(1)};
 `
+const PostBlogSupport = styled.p`
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: Libre Franklin; sans-serif;
+  font-weight: normal;
+`
 const PostSubtitle = styled.h3`
   font-weight: normal;
   font-size: 18px;
@@ -99,6 +105,9 @@ class BlogPostTemplate extends React.Component {
               <PostTitle>
                 {post.frontmatter.title}
               </PostTitle>
+              <PostBlogSupport>
+                Se gostar do conteúdo, me apoie no <a href="https://ko-fi.com/adamsalves">Ko-fi</a> :)
+              </PostBlogSupport>
             </WrapPostTitle>
             <WrapPostSubtitle>
               <PostSubtitle>
