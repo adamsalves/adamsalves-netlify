@@ -19,7 +19,7 @@ const WrapPostTitle = styled.section`
   z-index: -1;
 `
 const PostTitle = styled.h1`
-  padding: 60px;
+  padding: 60px 60px 0 60px;
   font-size: 2.5rem;
 `
 const WrapPostSubtitle = styled.section`
