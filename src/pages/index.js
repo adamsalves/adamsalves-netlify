@@ -25,7 +25,7 @@ const HeaderBlogDescription = styled.h2`
 `
 
 const HeaderBlogSupport = styled.p`
-  padding: 10px;
+  padding: 10px 10px 60px 10px;
   font-size: 1.2rem;
   font-family: Libre Franklin; sans-serif;
   font-weight: normal;
