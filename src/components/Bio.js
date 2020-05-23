@@ -43,6 +43,9 @@ class Bio extends React.Component {
         <BioLegend>
           <BioParagraph dangerouslySetInnerHTML={{ __html: this.props.site.siteMetadata.bio }} />
           <BioParagraph>
+            Se gostar do conteúdo, me apoie no <a href="https://ko-fi.com/adamsalves">Ko-fi</a> :)
+          </BioParagraph>
+          <BioParagraph>
             Entre em contato comigo pelo e-mail:{' '} 
             <a href="mailto:contato@adamsalves.com.br">
               contato@adamsalves.com.br
