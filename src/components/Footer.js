@@ -54,37 +54,37 @@ class Footer extends Component {
           {this.props.site.siteMetadata.title} - {new Date().getFullYear()}
         </FooterLink>
         <FooterNav>
-          <a href="https://twitter.com/adams_alves/">
+          <a href="https://twitter.com/adams_alves">
             <FooterImage 
               src={twitter}
             />
           </a>
-          <a href="https://github.com/adamsalves/">
+          <a href="https://github.com/adamsalves">
             <FooterImage
               src={github}
             />
           </a>
-          <a href="https://instagram.com/adamsalves.dev/">
+          <a href="https://instagram.com/adamsalves.dev">
             <FooterImage
               src={instagram}
             />
           </a>
-          <a href="https://facebook.com/adamsalves.webdesigner/">
+          <a href="https://facebook.com/adamsalves.dev">
             <FooterImage
               src={facebook}
             />
           </a>
-          <a href="https://linkedin.com/in/adams-alves/">
+          <a href="https://linkedin.com/in/adams-alves">
             <FooterImage
               src={linkedin}
             />
           </a>
-          <a href="https://dribbble.com/adamsalves/">
+          <a href="https://dribbble.com/adamsalves">
             <FooterImage
               src={dribbble}
             />
           </a>
-          <a href="https://codepen.io/adams_alves/">
+          <a href="https://codepen.io/adams_alves">
             <FooterImage
               src={codepen}
             />

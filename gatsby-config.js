@@ -3,7 +3,7 @@ module.exports = {
     title: 'Adams Alves',
     author: 'Adams O. S. Alves',
     description: 'Adams Alves - Desenvolvimento Web e Front End em São Paulo/SP.',
-    bio: 'Trabalho com <strong>Desenvolvimento Web</strong> com foco em <strong>Front-End</strong>. Já atuei como freelancer na criação de sites institucionais e projetos que usavam <strong>Wordpress</strong>. Atualmente quero trabalhar com Front-end, <strong>Vue e React</strong> ou frameworks semelhantes e <strong>UI Design</strong>.',
+    bio: 'Trabalho com <strong>Desenvolvimento Web</strong> e <strong>Front-End</strong>, em projetos que usam Wordpress, Javascript (ES6+) e Vue.js.',
     siteUrl: 'https://adamsalves.com.br/',
   },
   pathPrefix: '/',

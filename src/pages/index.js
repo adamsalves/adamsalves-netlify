@@ -18,11 +18,19 @@ const SectionBlogDescription = styled.section`
   z-index: -1;
 `
 const HeaderBlogDescription = styled.h2`
-  padding: 60px;
+  padding: 60px 60px 0 60px;
   font-size: 2.5rem;
   font-family: Libre Franklin; sans-serif;
   font-weight: normal;
 `
+
+const HeaderBlogSupport = styled.p`
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: Libre Franklin; sans-serif;
+  font-weight: normal;
+`
+
 const MainBlogPost = styled.main`
   margin-left: auto;
   margin-right: auto;
@@ -78,6 +86,9 @@ class BlogIndex extends React.Component {
           <HeaderBlogDescription>
             <strong>Desenvolvimento Web</strong> e <strong>Front-End</strong>
           </HeaderBlogDescription>
+          <HeaderBlogSupport>
+            Se gostar do conteúdo, me apoie no <a href="https://ko-fi.com/adamsalves">Ko-fi</a> :)
+          </HeaderBlogSupport>
         </SectionBlogDescription>
         <MainBlogPost>
           <MainBlogPostHead>
