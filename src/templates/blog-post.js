@@ -11,6 +11,7 @@ import get from 'lodash/get'
 import { rhythm, scale } from '../utils/typography'
 import kebabCase from 'lodash/kebabCase'
 import styled from 'styled-components'
+import { DiscussionEmbed } from "disqus-react"
 
 // css
 const WrapPostTitle = styled.section`
@@ -83,6 +84,13 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
+    const slug = post.frontmatter.slug
+    const title = post.frontmatter.title
+    
+    const disqusConfig = {
+      shortname: 'adamsalves',
+      config: { identifier: slug, title },
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -157,6 +165,7 @@ class BlogPostTemplate extends React.Component {
                   }
                 </li>
               </PostNextPrev>
+              <DiscussionEmbed {...disqusConfig} />
             </MainContentPost>
           </article>
         </MainPost>
